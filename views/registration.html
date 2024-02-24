@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form id="registration">
+            <h2>Registrate</h2>
+            <div>
+                <p>¿Ya tienes cuenta?<a> Entra aquí</a></p>
+            </div>
+            <div>
+                <h3>Crea una cuenta </h3>
+            </div>
+            <div>
+                    <div> <!--Nombre(s)-->
+                        <input type="text" name="firstNames" id="firstNames">
+                        <label for="firstNames">First name(s):</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Apellido(s)-->
+                        <input type="text" name="lastNames" id="lastNames">
+                        <label for="lastNames">Last name(s):</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Email-->
+                        <input type="text" name="email" id="email">
+                        <label for="email">Email:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Nombre de usuario-->
+                        <input type="text" name="userName" id="userName">
+                        <label for="userName">Username:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Fecha de nacimiento-->
+                        <input type="date" name="birthDate" id="birthDate">
+                        <label for="birthDate">Birth date:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Gender-->
+                        <input type="radio" name="male" id="male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="female" id="female">
+                        <label for="female">Female</label>
+                        <input type="radio" name="other" id="other">
+                        <label for="other">Other</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Visibility 1-->
+                        <input type="radio" name="public" id="public">
+                        <label for="public">Public:</label>
+                        <input type="radio" name="private" id="private">
+                        <label for="private">Private:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Nombre de usuario-->
+                        <input type="file" name="profilePic" id="profilePic">
+                        <label for="profilePic">Profile picture:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Contraseña-->
+                        <input type="password" name="userPassword" id="userPassword">
+                        <label for="userPassword">Password:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+                    <div> <!--Confirmar contraseña-->
+                        <input type="password" name="userConfirm" id="userConfirm">
+                        <label for="userConfirm">Confirm password:</label>
+                        <!--p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p-->
+                    </div>
+            </div>
+            <input type="submit">
+        </form>
+        <script src="../js/registration.js"></script>
+    </body>
+</html>
