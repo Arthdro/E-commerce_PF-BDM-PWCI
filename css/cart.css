@@ -1,0 +1,55 @@
+.cart-page{
+    margin: 30px auto;
+    margin-bottom: 80px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart_info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart_info p{
+    padding-left: 15px;
+}
+
+.cart_info small{
+    padding-left: 15px;
+}
+
+.cart_info a{
+    padding-left: 15px;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: #FFF;
+    background: #FF523B;
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+ 
+td a{
+    color: #FF523B;
+    font-size: 12px;
+}
+
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
