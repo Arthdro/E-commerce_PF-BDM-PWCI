@@ -41,6 +41,14 @@ p{
 
 }
 
+.p-header{
+    color:#000000;
+}
+
+.p-white{
+    color:#ffffff;
+}
+
 .container{
     max-width: 1300px;
     margin: auto;
@@ -166,7 +174,7 @@ h4{
 
 /* Offer */
 .offer{
-    background: radial-gradient(#fff, #FFD6D6);
+    background: #470081;
     margin-top: 80px;
     padding: 30px 0;
 }
@@ -176,7 +184,7 @@ h4{
 }
 
 small{
-    color: #555;
+    color: #c9c9c9;
 }
 
 /*testimonial*/
@@ -282,4 +290,55 @@ small{
 
 ul{
     list-style-type: none;
+}
+
+
+.bg-image{
+    background-color: #000;
+    background-image: url(../img/poster1.png);
+    color: white;
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.bg-container{
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-size: 300px 100px;
+}
+
+
+/*all products page*/
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+.page-btn{
+    margin:0 auto 80px;
+}
+.page-btn span{
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.page-btn span:hover{
+    background: #ff523b;
+    color:#ffffff;
 }
