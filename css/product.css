@@ -21,3 +21,47 @@
     padding: 10px;
     margin-top: 20px;
 }
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523B;
+}
+
+input:focus{
+    outline: none;
+}
+
+.single-product .fa{
+    color: #ff523B;
+    margin-left: 10px;   
+}
+
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    margin-top: 10px;
+    flex-basis: 22%;
+    cursor: pointer;
+    opacity: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+    .single-product .row{
+        text-align: left;
+    }
+
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+
+    .single-product h1{
+        font-size: 26px;
+    }
+}
