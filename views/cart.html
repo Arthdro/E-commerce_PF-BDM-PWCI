@@ -2,9 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width. initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="../css/commons.css"> 
+        <link rel="stylesheet" href="../css/commons.css">
+        <link rel="stylesheet" href="../css/cart.css"> 
         <title>THE DU(C)KE'S</title>
     </head>
     <body>
@@ -17,17 +19,89 @@
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Products</a></li>
+                            <li><a href="../views/landing-page2.html">Home</a></li>
+                            <li><a href="../views/products.html">Products</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="">Contact</a></li>
-                            <li><a href="">Accont</a></li>
-                            <li><a href="">Cart</a></li>
+                            <li><a href="../views/account.html">Account</a></li>
+                            <li><a href="../views/cart.html">Cart</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
+
+        <!--Cart items details-->
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart_info">
+                            <img src="../img/air-jordan-1.jpg">
+                            <div>
+                                <p>Nike Air Jordan 1 Chicago</p>
+                                <small>Price: $39.99</small>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$39.99</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart_info">
+                            <img src="../img/converse-white.jpg">
+                            <div>
+                                <p>Converse White Leather</p>
+                                <small>Price: $49.99</small>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$49.99</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart_info">
+                            <img src="../img/amazfit5.png">
+                            <div>
+                                <p>Amazfit 5</p>
+                                <small>Price: $119.99</small>
+                                <a href="">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$119.99</td>
+                </tr>
+            </table>
+
+            <div class="total-price">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>$50.99</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$250.99</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        
 
         <!--Footer-->
         <div class="footer">
