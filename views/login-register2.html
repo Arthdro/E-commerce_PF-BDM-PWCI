@@ -2,16 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../css/commons.css"> 
         <title>THE DU(C)KE'S</title>
-    </head>
-
-
-    
+    </head>    
     <body>
-
         <!--Header/Navbar-->
         <header>
             <div class="container">
@@ -21,11 +18,11 @@
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Products</a></li>
+                            <li><a href="../views/landing-page2.html">Home</a></li>
+                            <li><a href="../views/products.html">Products</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="">Contact</a></li>
-                            <li><a href="">Accont</a></li>
+                            <li><a href="../views/account.html">Account</a></li>
                             <li><a href="">Cart</a></li>
                         </ul>
                     </nav>
@@ -48,43 +45,46 @@
                     <img src="../img/tw.png">
                     <img src="../img/gp.png">
                 </div>
+
                 <!-- LOGIN -->
                 <form id="login" class="input-group">
-                    <input type="email" class="input-field" placeholder="Email" name="user-email" id="user-email" required>
-                    <p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p>
+                    <input type="email" class="input-field" name="user-email" id="user-email" placeholder="Email" required>
+                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p-->
                 
-                    <input type="text" class="input-field" id="password" placeholder="Contraseña" required>
-                    <p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p>
+                    <input type="text" class="input-field"  name="user-password" id="user-password" placeholder="Password" required>
+                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p-->
                                     
-                    <input type="checkbox" class="chech-box"><span>Recordar contraseña</span>
-                    <button type="submit" class="submit-btn">Log in</button>       
+                    <input type="checkbox" class="chech-box"><span>Recordar contraseña</span>      
+                    <button type="submit" class="submit-btn">Log in</button>
                 </form>
+
                 <!-- REGISTER -->
                 <form id="register" class="input-group">
 
                     <!--Nombre(s)-->
-                    <input type="text" class="input-field" placeholder="Nombres" id="firstNames" name="nombreInicioSes" placeholder="" value="" required>
-                    <p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>Ingrese un nombre.</p>
+                    <input type="text" class="input-field" placeholder="Nombres" id="fullName" name="fullName">
+                    <!--p class="warning-message" name="wrong-format-fullname" id="wrong-format-fullname" hidden>El formato no es valido.</p-->
 
                     <!-- Email -->
-                    <input type="email" class="input-field" placeholder="Email" name="user-email" id="user-email" required>
-                    <p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p>
+                    <input type="email" class="input-field" placeholder="Email" name="user-email" id="user-email">
+                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p-->
 
                     <!-- Username -->
-                    <input type="text" class="input-field" placeholder="Usuario" name="user-name" id="user-name" required>
-                    <p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>Este no es un usuario válido</p>
+                    <input type="text" class="input-field" placeholder="Usuario" name="user-name" id="user-name">
+                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>Este no es un usuario válido</p-->
 
                     <!-- Password -->
-                    <input type="text" class="input-field" id="password" placeholder="Contraseña" required>
-                    <p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p>
+                    <input type="text" class="input-field" id="user-password" name="user-password" placeholder="Contraseña">
+                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p-->
+
                     <!-- Password Verification-->
-                    <input type="text" class="input-field" id="password2" placeholder="Verificación de contraseña" required>
-                    <p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña no coincide.</p>
-                    
-                   
-                    <input type="checkbox" class="chech-box"><span>Estoy de acuerdo con los terminos y condiciones</span>
-                    <button type="submit" class="submit-btn">Register</button>         
+                    <input type="text" class="input-field" id="password2" placeholder="Verificación de contraseña">
+                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña no coincide.</p-->
+
+                    <input type="checkbox" class="chech-box"><span>Estoy de acuerdo con los terminos y condiciones</span>  
+                    <button type="submit" class="submit-btn" value="Register">Sign in</button>
                 </form>
+
                 <form id="register2" class="input-group2">
                     <!--Fecha de nacimiento-->
                     <label for="birthDate">Birth date:</label>
@@ -103,8 +103,7 @@
 
                         <p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p>
                     </div>
-                   
-                    
+                        
                     <!--Visibility 1-->
                     <label for="accountType">Account type:</label>
                     <div>
@@ -114,18 +113,10 @@
                         <input type="radio" class="input-radio-acc" name="private" id="private">
                         <p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p>
                     </div>
-                    
-
-                    
-
-
                 </form>
 
             </div>
-
        </div>
-
-
 
         <!--Footer-->
         <div class="footer">
@@ -158,33 +149,8 @@
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script>
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
-            var register2 = document.getElementById("register2");
-            var z = document.getElementById("btn");
-            var formbox = document.getElementById("form-box");
-
-            function register(){
-                x.style.left = "-400px";
-                y.style.left = "100px";
-                register2.style.left = "450px";
-                z.style.left = "110px";
-                formbox.style.height = "700px"; 
-                formbox.style.width = "800px"; 
-                 
-            }
-
-            function login(){
-                x.style.left = "100px";
-                y.style.left = "550px";
-                register2.style.left = "550px";
-                z.style.left = "0px";
-                formbox.style.height = "540px";
-                formbox.style.width = "480px"; 
-                
-            }
-        </script>
+        
+        <script src="../js/login-signIn.js"></script>
+        <script src="../js/app.js"></script>
     </body>
 </html>

@@ -8,6 +8,7 @@ const lowercaseRegex = /[a-z]/;
 const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-]/;
 const digitRegex = /\d/;
 
+
 //Contraseña
 //Correo
 //Trim
