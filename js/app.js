@@ -18,7 +18,8 @@ function sendForm(e){
     const formData = new FormData(e.currentTarget);    
     const data = Object.fromEntries(formData.entries());
 
-    passwordValidation(data);
+    //passwordValidation(data);
+    blankSpaceLogin(data);
     emailValidation(data);
 }
 
@@ -27,7 +28,7 @@ function sendRegister(e){
     const formData = new FormData(e.currentTarget);    
     const data = Object.fromEntries(formData.entries());
 
-    blankSpaceValidation(data);
+    blankSpaceSignIn(data);
     syntaxValidation(data);
     passwordValidation(data);
     emailValidation(data);
@@ -38,8 +39,8 @@ function emailValidation(aux) {
     //let message = document.getElementById("wrong-format");
     let variable = aux["user-email"];
     if (!emailRegex.test(variable)){
-        console.log(variable);
-        console.log("Formato correcto");
+        //console.log(variable);
+        //console.log("Formato correcto");
         errors.push({ msg: "El formato de email no es válido." });
         //message.style.display = "none";
     }       
@@ -101,7 +102,7 @@ function passwordValidation(aux) {
     }
 }
 
-function blankSpaceValidation(aux){
+function blankSpaceSignIn(aux){
     let errors = [];
     //let stringe = aux["fullName"];
     //console.log(stringe);
@@ -114,6 +115,24 @@ function blankSpaceValidation(aux){
     }
     if(!aux["user-name"] || !aux["user-name"].trim()) {
         errors.push({ msg: "Campo nombre de usuario está vacío." });
+    }
+    if(!aux["user-password"] || !aux["user-password"].trim()) {     // No se valida email porque ya ese esta valdiando desde el formulario
+        errors.push({ msg: "Campo contraseña está vacío." });
+    }
+
+    if(errors.length) {
+        alert(JSON.stringify(errors));
+        return;
+    }
+}
+
+function blankSpaceLogin(aux){
+    let errors = [];
+    //let stringe = aux["fullName"];
+    //console.log(stringe);
+
+    if(!aux["user-email"] || !aux["user-email"].trim()) {
+        errors.push({ msg: "Campo correo está vacío." });
     }
     if(!aux["user-password"] || !aux["user-password"].trim()) {     // No se valida email porque ya ese esta valdiando desde el formulario
         errors.push({ msg: "Campo contraseña está vacío." });
