@@ -1,5 +1,6 @@
 const form = document.getElementById("login");
 const signInForm = document.getElementById("register");
+const signInFormSec = document.getElementById("register2");
 const syntaxRegex = /^[a-zA-ZÀ-ÿñÑ' ']{2,49}$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const uppercaseRegex = /[A-Z]/;
@@ -19,8 +20,15 @@ function sendForm(e){
     const data = Object.fromEntries(formData.entries());
 
     //passwordValidation(data);
-    blankSpaceLogin(data);
-    emailValidation(data);
+    if (blankSpaceLogin(data)) {
+        return;
+    } 
+    else if(emailValidation(data)) {
+        return;
+    }
+    else{
+        window.location.href = "../views/landing-page2.html";
+    }
 }
 
 function sendRegister(e){
@@ -28,10 +36,25 @@ function sendRegister(e){
     const formData = new FormData(e.currentTarget);    
     const data = Object.fromEntries(formData.entries());
 
-    blankSpaceSignIn(data);
+    if (blankSpaceSignIn(data)) {
+        return;
+    } 
+    else if(syntaxValidation(data)) {
+        return;
+    }
+    else if(passwordValidation(data)){
+        return;
+    }
+    else if(emailValidation(data)){
+        return;
+    }
+    else{
+        window.location.href = "../views/landing-page2.html";
+    }
+    /*blankSpaceSignIn(data);
     syntaxValidation(data);
     passwordValidation(data);
-    emailValidation(data);
+    emailValidation(data);*/
 }
 
 function emailValidation(aux) {
@@ -51,7 +74,7 @@ function emailValidation(aux) {
     } */
     if(errors.length) {
         alert(JSON.stringify(errors));
-        return;
+        return true;
     }
 }
 
@@ -98,7 +121,7 @@ function passwordValidation(aux) {
     
     if(errors.length) {
         alert(JSON.stringify(errors));
-        return;
+        return true;
     }
 }
 
@@ -122,7 +145,7 @@ function blankSpaceSignIn(aux){
 
     if(errors.length) {
         alert(JSON.stringify(errors));
-        return;
+        return true;
     }
 }
 
@@ -140,7 +163,7 @@ function blankSpaceLogin(aux){
 
     if(errors.length) {
         alert(JSON.stringify(errors));
-        return;
+        return true;
     }
 }
 
@@ -156,7 +179,7 @@ function syntaxValidation(aux) {
 
     if(errors.length) {
         alert(JSON.stringify(errors));
-        return;
+        return true;
     }
     /*else {
         //console.log("El formato NO es valido");
