@@ -49,10 +49,8 @@
                 <!-- LOGIN -->
                 <form id="login" class="input-group">
                     <input type="email" class="input-field" name="user-email" id="user-email" placeholder="Email">
-                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p-->
-                
+                    
                     <input type="text" class="input-field"  name="user-password" id="user-password" placeholder="Password">
-                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p-->
                                     
                     <input type="checkbox" class="chech-box"><span>Recordar contraseña</span>      
                     <button type="submit" class="submit-btn">Log in</button>
@@ -63,24 +61,19 @@
 
                     <!--Nombre(s)-->
                     <input type="text" class="input-field" placeholder="Nombres" id="fullName" name="fullName">
-                    <!--p class="warning-message" name="wrong-format-fullname" id="wrong-format-fullname" hidden>El formato no es valido.</p-->
-
+                    
                     <!-- Email -->
                     <input type="email" class="input-field" placeholder="Email" name="user-email" id="user-email">
-                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>El email ingresado no tiene un formato válido</p-->
-
+                    
                     <!-- Username -->
                     <input type="text" class="input-field" placeholder="Usuario" name="user-name" id="user-name">
-                    <!--p class="warning-message" name="wrong-format-email" id="wrong-format-email" hidden>Este no es un usuario válido</p-->
-
+                    
                     <!-- Password -->
                     <input type="text" class="input-field" id="user-password" name="user-password" placeholder="Contraseña">
-                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña es obligatoria.</p-->
-
+                    
                     <!-- Password Verification-->
                     <input type="text" class="input-field" id="password2" placeholder="Verificación de contraseña">
-                    <!--p class="warning-message" name="wrong-format-password" id="wrong-format-password" hidden>La contraseña no coincide.</p-->
-
+                    
                     <input type="checkbox" class="chech-box"><span>Estoy de acuerdo con los terminos y condiciones</span>  
                     <button type="submit" class="submit-btn" value="Register">Sign in</button>
                 </form>
@@ -89,29 +82,25 @@
                     <!--Fecha de nacimiento-->
                     <label for="birthDate">Birth date:</label>
                     <input type="date" class="input-birth" name="birthDate" id="birthDate">
-                    <p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p>
-
+                    
                     <!--Gender-->
                     <label for="gender">Gender:</label>
                     <div>
                         <label for="male">Male</label>
-                        <input type="radio" class="input-radio-gen" name="male" id="male">
+                        <input type="radio" class="input-radio-gen" name="gender" id="male">
                         <label for="female">Female</label>
-                        <input type="radio" class="input-radio-gen" name="female" id="female">
+                        <input type="radio" class="input-radio-gen" name="gender" id="female">
                         <label for="other">Other</label>
-                        <input type="radio" class="input-radio-gen" name="other" id="other">
-
-                        <p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p>
+                        <input type="radio" class="input-radio-gen" name="gender" id="other">
                     </div>
                         
-                    <!--Visibility 1-->
+                    <!--Account Type-->
                     <label for="accountType">Account type:</label>
                     <div>
                         <label for="public">Public:</label>
-                        <input type="radio" class="input-radio-acc" name="public" id="public">
+                        <input type="radio" class="input-radio-acc" name="accountType" id="public">
                         <label for="private">Private:</label>
-                        <input type="radio" class="input-radio-acc" name="private" id="private">
-                        <p class="warning-message" name="wrong-format" id="wrong-format" hidden>El email ingresado no tiene un formato válido</p>
+                        <input type="radio" class="input-radio-acc" name="accountType" id="private">
                     </div>
                 </form>
 

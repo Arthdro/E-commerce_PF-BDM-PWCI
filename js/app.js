@@ -1,6 +1,6 @@
 const form = document.getElementById("login");
 const signInForm = document.getElementById("register");
-const signInFormSec = document.getElementById("register2");
+//const signInFormSec = document.getElementById("register2");
 const syntaxRegex = /^[a-zA-ZÀ-ÿñÑ' ']{2,49}$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const uppercaseRegex = /[A-Z]/;
@@ -10,10 +10,10 @@ const digitRegex = /\d/;
 const characterQuantity = /^.{8,50}$/;
 
 
-form.addEventListener("submit", sendForm);
-signInForm.addEventListener("submit", sendRegister);
+form.addEventListener("submit", login);
+signInForm.addEventListener("submit", signIn);
 
-function sendForm(e){
+function login(e){
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);    
@@ -27,11 +27,17 @@ function sendForm(e){
         return;
     }
     else{
-        window.location.href = "../views/landing-page2.html";
+        let xhr = new XMLHttpRequest();
+        const user = {
+            username: data["user-email"].trim(),
+            password: data["user-password"].trim()
+        };
+        xhr.open("POST", "../controller/login.php", true); // true en modo asicrono
+        //window.location.href = "../views/landing-page2.html";
     }
 }
 
-function sendRegister(e){
+function signIn(e){
     e.preventDefault();
     const formData = new FormData(e.currentTarget);    
     const data = Object.fromEntries(formData.entries());
