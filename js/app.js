@@ -33,6 +33,28 @@ function login(e){
             password: data["user-password"].trim()
         };
         xhr.open("POST", "../controller/login.php", true); // true en modo asicrono
+        
+        xhr.onreadystatechange = function () {
+            //Termina peticion 200 = OK
+            try {
+                if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)  {
+                    let res = JSON.parse(xhr.response);
+                    if(res.success != true) {
+                        alert(res.msg);
+                        return;
+                    }
+                    // Sucess ...
+                    alert(res.msg);
+                    window.location.replace("landing-page2.html");
+                }
+            } catch(error) {
+                // Se imprime el error del servidor
+                console.error(xhr.response);
+            }
+            
+        }
+        //Enviarlo en formato JSON
+        xhr.send(JSON.stringify(user));
         //window.location.href = "../views/landing-page2.html";
     }
 }
@@ -55,7 +77,7 @@ function signIn(e){
         return;
     }
     else{
-        window.location.href = "../views/landing-page2.html";
+        //window.location.href = "../views/landing-page2.html";
     }
     /*blankSpaceSignIn(data);
     syntaxValidation(data);
@@ -205,3 +227,19 @@ function syntaxValidation(aux) {
         console.log("La dirección de correo electrónico no es válida.");
     } 
 }*/
+
+
+function passwordComparation(aux){
+    let errors = [];
+    let password = aux["user-password"];
+    let confirmPassword = aux["password2"];
+
+    if(confirmPassword != password){
+        return true;
+    }
+
+    if(errors.length) {
+        alert(JSON.stringify(errors));
+        return true;
+    }
+}

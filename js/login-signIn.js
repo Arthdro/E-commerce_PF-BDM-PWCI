@@ -1,8 +1,14 @@
 var x = document.getElementById("login");
 var y = document.getElementById("register");
+var loginBtn = document.getElementById("loginBtn");
+var signInBtn = document.getElementById("signInBtn");
+
 var register2 = document.getElementById("register2");
 var z = document.getElementById("btn");
 var formbox = document.getElementById("form-box");
+
+loginBtn.addEventListener("click", login);
+signInBtn.addEventListener("click", register);
 
 function register(){
     x.style.left = "-400px";

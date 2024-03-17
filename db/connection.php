@@ -1,13 +1,12 @@
 <?php
     class connection{
-       private string $host = '';
-       private string $db = '';
-       private string $user = '';
-       private string $password = '';
-
         static public function connect() {
+            $host = '127.0.0.1';
+            $db = 'DUCKES_DB';
+            $user = 'root';
+            $password = 'hola12345';
             try {
-                $mysqli = new mysqli(self::$host,self::$user,self::$password,self::$db);
+                $mysqli = new mysqli($host,$user,$password,$db);
                 if ($mysqli->connect_errno) {
                     $response = (object)array("status"=>500,"message"=>$mysqli->connect_error);
                     echo json_encode($response);

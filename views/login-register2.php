@@ -27,17 +27,15 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
-
-        </div >   
+            </div> 
         </header>
         
         <div class="hero">
             <div class="form-box" id="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
-                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                    <button type="button" class="toggle-btn" id="loginBtn">Log In</button>
+                    <button type="button" class="toggle-btn" id="signInBtn">Register</button>
                 </div>
 
                 <div class="social-icons">
@@ -47,13 +45,13 @@
                 </div>
 
                 <!-- LOGIN -->
-                <form id="login" class="input-group">
+                <form action="#" id="login" class="input-group" method="POST">
                     <input type="email" class="input-field" name="user-email" id="user-email" placeholder="Email">
                     
                     <input type="text" class="input-field"  name="user-password" id="user-password" placeholder="Password">
                                     
                     <input type="checkbox" class="chech-box"><span>Recordar contraseña</span>      
-                    <button type="submit" class="submit-btn">Log in</button>
+                    <input type="submit" class="submit-btn" value="Log in">
                 </form>
 
                 <!-- REGISTER -->
@@ -61,19 +59,19 @@
 
                     <!--Nombre(s)-->
                     <input type="text" class="input-field" placeholder="Nombres" id="fullName" name="fullName">
-                    
+
                     <!-- Email -->
                     <input type="email" class="input-field" placeholder="Email" name="user-email" id="user-email">
-                    
+
                     <!-- Username -->
                     <input type="text" class="input-field" placeholder="Usuario" name="user-name" id="user-name">
-                    
+
                     <!-- Password -->
                     <input type="text" class="input-field" id="user-password" name="user-password" placeholder="Contraseña">
-                    
+
                     <!-- Password Verification-->
                     <input type="text" class="input-field" id="password2" placeholder="Verificación de contraseña">
-                    
+
                     <input type="checkbox" class="chech-box"><span>Estoy de acuerdo con los terminos y condiciones</span>  
                     <button type="submit" class="submit-btn" value="Register">Sign in</button>
                 </form>
@@ -82,7 +80,7 @@
                     <!--Fecha de nacimiento-->
                     <label for="birthDate">Birth date:</label>
                     <input type="date" class="input-birth" name="birthDate" id="birthDate">
-                    
+
                     <!--Gender-->
                     <label for="gender">Gender:</label>
                     <div>
@@ -102,7 +100,7 @@
                         <label for="private">Private:</label>
                         <input type="radio" class="input-radio-acc" name="accountType" id="private">
                     </div>
-                </form>
+                </form> 
 
             </div>
        </div>

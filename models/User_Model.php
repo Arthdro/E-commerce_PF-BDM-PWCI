@@ -1,26 +1,28 @@
 <?php
     class User_Model{
-        private int $userid;
+        private int $userId;
         private string $email;
         private string $username;
-        private string $password;
-        private int $type;
-        private int $accounttype;
-        private string $fullname;
+        private string $pass;
+        private int $userType;
+        private int $accountPrivacy;
+        private string $fullName;
         private string $gender;
-        private string $birthdate;
-        private string $profilepic;
+        private string $birthDate;
+        private string $profilePic;
 
-        private function __construct(){
-            
+        private function __construct($fullName, $username, $email){
+            $this->fullName = $fullName;
+            $this->username = $username;
+            $this->email = $email;
         }
 
         public function setUserId($userId){
-            $this->userid = $userId;
+            $this->userId = $userId;
         }
 
         public function getUserId(){
-            return $this->userid;
+            return $this->userId;
         }
 
         public function setEmail($email){
@@ -32,13 +34,27 @@
         }
 
         public static function findUserByUsername($mysqli, $username, $password) {
-            /*$sql = "SELECT id, names, lastnames, username, email FROM users WHERE  username = ? AND password = ? LIMIT 1";
+            $sql = "SELECT userId, fullName, username, email FROM DUCKES_DB.Users WHERE email = ? AND pass = ? LIMIT 1";
             $stmt = $mysqli->prepare($sql);
             $stmt->bind_param("ss",$username, $password);
             $stmt->execute();
             $result = $stmt->get_result(); 
             $user = $result->fetch_assoc();
-            return $user ? User::parseJson($user) : NULL;*/
+            return $user ? User_Model::parseJson($user) : NULL;
+        }
+
+        static public function parseJson($json) {
+            $user =  new User_Model(
+                isset($json["fullName"]) ? $json["fullName"] : "",              
+                isset($json["username"]) ? $json["username"] : "",
+                isset($json["email"]) ? $json["email"] : ""
+            );
+            if(isset($json["userId"]))
+                $user->setUserId((int)$json["userId"]);
+            return $user;
+        }
+
+        public function toJSON() {
+            return get_object_vars($this);
         }
     }
-?>
