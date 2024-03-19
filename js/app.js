@@ -45,7 +45,7 @@ function login(e){
                     }
                     // Sucess ...
                     alert(res.msg);
-                    window.location.replace("landing-page2.html");
+                    window.location.replace("account.php");
                 }
             } catch(error) {
                 // Se imprime el error del servidor
@@ -214,20 +214,6 @@ function syntaxValidation(aux) {
         //message.style.display = "block";
     } */
 }
-
-/*function emailValidation(user_email) {
-    if (emailRegex.test(user_email.value)){
-        console.log(user_email.value);
-        message.style.display = "block";
-        console.log("La dirección de correo electrónico es válida.");
-    }       
-    else {
-        console.log(user_email.value);
-        message.style.display = "block";
-        console.log("La dirección de correo electrónico no es válida.");
-    } 
-}*/
-
 
 function passwordComparation(aux){
     let errors = [];

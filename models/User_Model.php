@@ -25,6 +25,22 @@
             return $this->userId;
         }
 
+        public function setUsername($username) {
+            $this->username = $username;
+        }
+
+        public function getUsername () {
+            return $this->username;
+        }
+
+        public function setFullName($fullName) {
+            $this->fullName = $fullName;
+        }
+
+        public function getFullName () {
+            return $this->fullName;
+        }
+
         public function setEmail($email){
             $this->email = $email;
         }
@@ -37,6 +53,16 @@
             $sql = "SELECT userId, fullName, username, email FROM DUCKES_DB.Users WHERE email = ? AND pass = ? LIMIT 1";
             $stmt = $mysqli->prepare($sql);
             $stmt->bind_param("ss",$username, $password);
+            $stmt->execute();
+            $result = $stmt->get_result(); 
+            $user = $result->fetch_assoc();
+            return $user ? User_Model::parseJson($user) : NULL;
+        }
+
+        public static function findUserById($mysqli, $id) {
+            $sql = "SELECT userId, fullName, username, email FROM DUCKES_DB.Users WHERE userId = ? LIMIT 1";
+            $stmt = $mysqli->prepare($sql);
+            $stmt->bind_param("i",$id);
             $stmt->execute();
             $result = $stmt->get_result(); 
             $user = $result->fetch_assoc();

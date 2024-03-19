@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    //session_regenerate_id();
+    if(!isset($_SESSION["AUTH"])) {
+        //Si la sesion de usuario no existe redirigir a login
+        header("Location: login-register2.php");
+        exit;
+    }
+    require_once "../models/User_Model.php";
+    require_once "../db/connection.php";
+    $idUser = $_SESSION["AUTH"];
+    $mysqli = connection::connect();
+    $user = User_Model::findUserById($mysqli,(int)$idUser);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,8 +23,6 @@
         <title>THE DU(C)KE'S</title>
     </head>
 
-
-    
     <body>
 
         <!--Header/Navbar-->
@@ -30,18 +43,21 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
-
-        </div >   
+            </div>  
         </header>
         
         <div class="hero2">
             <div class="profile-box" id="profile-box">
                 <img src="../img/menu.png" class="menu-icon">
                 <img src="../img/setting.png" class="setting-icon">
-                <img src="../img/profile-pic.png" class="profile-pic">
-                <h3>Jack Nicholson</h3>
+                <img src="../img/palutena_icon.jpg" class="profile-pic">
+                <h3><?= $user->getUsername() ?></h3>        
                 <p>Comprador</p>
+                <h3>Datos personales</h3>
+                <label for="p-fullname"></label>
+                <p name="p-fullname"> <?= $user->getFullName()?></p>
+                <label for="p-email"></label>
+                <p name="p-email"> <?= $user->getEmail()?></p>
                 <div class="social-media">
                     <img src="../img/instagram.png">
                     <img src="../img/telegram.png">

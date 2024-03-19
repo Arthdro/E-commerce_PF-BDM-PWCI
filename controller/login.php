@@ -31,7 +31,6 @@
             //Guardamos el ID del usuario en la sesion
             $_SESSION["AUTH"] = (string)$user->getUserId();
             echo json_encode($json_response);
-            //header("Location: http://localhost/E-commerce_PF-BDM-PWCI/views/landing-page2.html");
             exit;
         } 
         else {
