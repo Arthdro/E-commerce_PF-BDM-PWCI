@@ -1,12 +1,20 @@
 <?php
     class connection{
         static public function connect() {
-            $host = '127.0.0.1';
+            //Arturo DB Config
+            $host = 'localhost';
             $db = 'DUCKES_DB';
             $user = 'root';
             $password = 'hola12345';
+            $port = 3306;
+
+            //Gaby DB DB Config
+            /*$host = '127.0.0.1';
+            $db = 'DUCKES_DB';
+            $user = 'root';
+            $password = 'hola12345';*/
             try {
-                $mysqli = new mysqli($host,$user,$password,$db);
+                $mysqli = new mysqli($host,$user,$password,$db, $port);
                 if ($mysqli->connect_errno) {
                     $response = (object)array("status"=>500,"message"=>$mysqli->connect_error);
                     echo json_encode($response);

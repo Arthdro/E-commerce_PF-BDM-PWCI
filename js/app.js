@@ -22,7 +22,7 @@ function login(e){
     //passwordValidation(data);
     if (blankSpaceLogin(data)) {
         return;
-    } 
+    }
     else if(emailValidation(data)) {
         return;
     }

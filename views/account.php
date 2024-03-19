@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
+        <!--script src="script.js"></script-->
         <script src="../js/chat.js"></script>
 
     </body>
