@@ -1,0 +1,189 @@
+CREATE DATABASE DUCKES_DB;
+
+CREATE TABLE DUCKES_DB.Users(
+userId 				int auto_increment NOT NULL,
+email 				varchar(100) UNIQUE NOT NULL,
+username			varchar(50) UNIQUE NOT NULL,
+pass				varchar(50),
+userType			varchar(50),
+profilePic			blob,
+fullName			varchar(150),
+birthDate			date,
+gender				varchar(50),
+creationDate		date,
+modificationDate	date,
+accountPrivacy		varchar(50),
+CONSTRAINT users_pk PRIMARY KEY (userId)
+);
+
+SELECT * FROM DUCKES_DB.Users;
+
+INSERT INTO DUCKES_DB.Users(userId, email, username, pass, userType, profilePic, 
+fullName, birthDate, gender, creationDate, modificationDate, accountPrivacy) 
+VALUES (1, 'arturopalorn@hotmail.com', 'arthdro', 'Abc1234*', 'administraitor', null, 'Palomo Ornelas Arturo Alejandro',
+'1999-04-10', 'Male', date(now()), date(now()), 'Private'); 
+
+SELECT userid, fullname, username, email FROM DUCKES_DB.Users WHERE  username = 'arthdro' AND pass = 'Abc1234*' LIMIT 1;
+
+/*CREATE TABLE Zapatosaurio_DB.Usuarios(
+ID_Usuario			int Primary Key AUTO_INCREMENT,
+Correo				varchar(50) UNIQUE,
+NombreUsuario		varchar(50) UNIQUE,
+Contraseña			varchar(50),
+Tipo_Usuario		varchar(50),
+Imagen				blob,
+Nombre_completo		varchar(50),
+Fecha_Nacimiento	date,
+sexo				char(1),
+fecha_creacion		date,
+fecha_modificacion	date,
+Privacidad			varchar(50)
+);
+
+CREATE TABLE Listas(
+ID_Listas		int Primary Key,
+Nombre			varchar(50), 
+descripción		varchar(100),
+Privacidad		varchar(50),
+Nombre_objeto	varchar(50),
+Descripcion		varchar(100),
+Precio			decimal,
+ID_Usuario		int,
+FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+);
+
+CREATE TABLE Categoria(
+ID_Categoria	int Primary Key,
+Nombre 			varchar(50),
+Descripcion		varchar(100),
+ID_Usuario			int,
+FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+);
+
+CREATE TABLE Objetos_Lista (
+ID_Objetos_Listas 	int Primary Key,
+Nombre				varchar(50),
+Descripcion 		varchar(100),
+Precio 				decimal,
+Cantidad_disponible int,
+ID_Listas 			int,
+FOREIGN KEY (ID_Listas) REFERENCES Listas(ID_Listas)
+);
+
+CREATE TABLE Producto(
+ID_Producto		int Primary Key,
+Nombre			varchar(50),
+Descripción		varchar(100),
+Imagen			blob,
+video			blob,
+categoria		varchar(50),
+Venta			decimal,
+Precio			decimal,
+cantidad		int,
+valoración		decimal,
+comentarios		varchar(50),
+Tipo			varchar(50),
+usuario_acepta	varchar(50),
+fecha			date,
+usuario_modif	varchar(50),
+fecha_modif		date,
+Cotizacion		char(1),
+ID_Categoria	int,
+ID_Usuario		int,
+FOREIGN KEY (ID_Categoria) REFERENCES Categoria(ID_Categoria),
+FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+);
+CREATE TABLE Mensajes(
+ID_comentarios	int Primary Key,
+Contenido	varchar(100),
+fecha		date,
+ID_Emisor	int,
+ID_Receptor	int,
+FOREIGN KEY (ID_Emisor) REFERENCES Usuarios(ID_Usuario),
+FOREIGN KEY (ID_Emisor) REFERENCES Usuarios(ID_Usuario));
+
+
+ /*
+CREATE TABLE Recibos(
+productos		varchar(50),
+cantidades		int,
+fechas			date,
+hora			time,
+metodo_pago		varchar(50) 
+
+);
+
+CREATE TABLE Ventas (
+ID_Ventas			int Primary Key,			
+calificacion		int,
+Precio				decimal,
+Existencia			int,
+ID_Producto			int,
+ID_Usuario			int,
+FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto),
+FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+);
+CREATE TABLE Carrito_Compras (
+ID_Carrito int Primary Key,
+Subtotal	decimal,
+Total		decimal,
+ID_Usuario 	INT,
+ID_Producto INT,
+FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario),
+FOREIGN KEY (ID_Usuario) REFERENCES Producto(ID_Usuario)
+);
+
+
+DELIMITER //
+CREATE procedure sp_register (IN user_ID int, p_email varchar(50), p_username varchar(50), p_password varchar(50), p_type varchar(50),
+p_profileimage blob, p_fullname varchar(50), p_date_of_birth date, p_gender char(1), p_date_crea date, p_date_modif date , p_privacy varchar(50))
+BEGIN
+DECLARE s VARCHAR(20);
+ IF EXISTS(SELECT user_ID FROM Users WHERE email = p_email) THEN
+    SET s = 'User already exists';
+ELSE
+    INSERT INTO users(user_ID, email, user_name, user_password, user_type, profile_image, full_name, date_of_birth, 
+    gender, date_crea, date_modif,  privacy) 
+	VALUES(user_ID, p_email, p_username, p_password, p_type, p_profileimage, p_fullname, p_date_of_birth, 
+    p_gender, p_date_crea, p_date_modif, p_privacy);
+    SET s =  "User Registered"; 
+END IF;
+END; //
+DELIMITER ;
+
+DELIMITER //
+CREATE procedure sp_editProfile (IN p_email varchar(50), p_password varchar(50), p_type varchar(50), p_profileimage blob, 
+p_fullname varchar(50), p_date_of_birth date, p_gender char(1), p_date_modif date , p_privacy varchar(50))
+BEGIN
+    UPDATE Users 
+    SET user_password = p_password,
+    profile_image = p_profileimage,
+    full_name = p_fullname,
+    date_of_birth = p_date_of_birth,
+    gender = p_gender,
+    p_date_modif = current_timestamp(),
+    privacy = p_privacy
+    WHERE email = p_email;
+END; //
+DELIMITER ;
+
+DELIMITER //
+
+CREATE procedure sp_Login (IN p_email varchar(50), p_password varchar(50), p_type varchar(50), p_profileimage blob, 
+p_fullname varchar(50), p_date_of_birth date, p_gender char(1), p_date_modif date , p_privacy varchar(50))
+BEGIN
+    UPDATE Users 
+    SET user_password = p_password,
+    profile_image = p_profileimage,
+    full_name = p_fullname,
+    date_of_birth = p_date_of_birth,
+    gender = p_gender,
+    p_date_modif = current_timestamp(),
+    privacy = p_privacy
+    WHERE email = p_email;
+END; //
+DELIMITER ;
+
+DROP PROCEDURE `add_users`
+*/
+
