@@ -25,6 +25,35 @@ VALUES (1, 'arturopalorn@hotmail.com', 'arthdro', 'Abc1234*', 'administraitor', 
 
 SELECT userid, fullname, username, email FROM DUCKES_DB.Users WHERE  username = 'arthdro' AND pass = 'Abc1234*' LIMIT 1;
 
+CREATE TABLE DUCKES_DB.Products(
+productId		int unsigned Primary Key,
+prodName		varchar(50),
+descrip			varchar(200),
+factoryPrice	float,
+generalPrice	float,
+stock			smallint,
+score			float,
+userIdWhoAppr	int,
+approvedDate	date,
+modifDate		date,
+quotable		char(5),
+userId			int,
+categoryId		smallint
+);
+
+CREATE TABLE DUCKES_DB.Categories(
+categoryId		smallint unsigned Primary Key,
+categoryName 	varchar(50),
+categoryDescr	varchar(150),
+userIdApproved	int,
+approvedDate	date,
+userIdModif		int,
+modifDate		date
+);
+
+
+/*-------------------------------- Query's proyecto anterior ---------------------------------*/
+
 /*CREATE TABLE Zapatosaurio_DB.Usuarios(
 ID_Usuario			int Primary Key AUTO_INCREMENT,
 Correo				varchar(50) UNIQUE,

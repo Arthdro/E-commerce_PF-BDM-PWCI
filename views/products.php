@@ -1,3 +1,7 @@
+<?php
+    require_once "../controller/products.php"
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,8 +13,6 @@
         <title>THE DU(C)KE'S</title>
     </head>
 
-
-    
     <body>
 
         <!--Header/Navbar-->
@@ -32,13 +34,8 @@
                     </nav>
                 </div>
             </div>
-
-        </div >   
-
         </header>
         
-
-
 
          <!--Features products-->
          <div class="small-container">
@@ -89,36 +86,10 @@
                     </div>
                     <p>$45.00</p>
                 </div>
-            </div>   
 
-            <div class="row">
                 <div class="col-4">
-                    <img src="../img/blazer.jpg" alt="">
-                    <h4>Blazer</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$50.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="../img/sudadera.jpg" alt="">
-                    <h4>Hoodie Black</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$60.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="../img/sweat_hoodie.jpg" alt="">
-                    <h4>Hoodie Beige</h4>
+                    <img src="../img/air-jordan-rb.jpg" alt="">
+                    <h4>Air Jordan Black/Red force</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -128,56 +99,16 @@
                     </div>
                     <p>$45.00</p>
                 </div>
-            </div>   
-
-            <div class="row">
-                <div class="col-4">
-                    <img src="../img/converse-black.jpg" alt="">
-                    <h4>Converse Black</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$40.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="../img/converse-red.jpg" alt="">
-                    <h4>Converse Red</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$40.00</p>
-                </div>
-                <div class="col-4">
-                    <img src="../img/converse-white.jpg" alt="">
-                    <h4>Converse White</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$45.00</p>
-                </div>
-            </div>  
+            </div>            
             
-            
-            <div class="page-btn">
+            <!--div class="page-btn">
                 <span>1</span>
                 <span>2</span>
                 <span>3</span>
                 <span>4</span>
                 <span>&#8594</span>
                 
-            </div>
+            </div-->
             
          </div>
 
@@ -235,7 +166,7 @@
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
+        <!--script src="script.js"></script-->
         <script src="../js/chat.js"></script>
     </body>
 </html>
